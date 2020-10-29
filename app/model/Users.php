@@ -8,7 +8,7 @@ use App\Model\UserSessions;
 class Users extends Model {
   protected static $_table='users', $_archived = true;
   public static $current_user = null;
-  public $id,$username,$email,$password,$fname,$lname,$acl,$archived = false, $confirm;
+  public $id,$username,$email,$password,$fname,$lname,$acl,$archived = 0, $confirm;
   public const blacklist = ['id','archived'];
 
   //add validator

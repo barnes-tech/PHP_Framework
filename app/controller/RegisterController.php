@@ -16,12 +16,14 @@ class RegisterController extends Controller {
     $login_model  = new Login();
     if($this->request->is_post()) {
       //form validation
+
       $this->request->csrf_check();
       $login_model->assign($this->request->get());
       $login_model->validator();
       if($login_model->is_valid()) {
         $user = Users::find_username($this->request->get('username'));
         if($user && password_verify($this->request->get('password'),$user->password)){
+
           $remember = $login_model->get_remember_me_checked();
           $user->login($remember);
           Session::add_msg('success','Welcome back '.$user->fname);

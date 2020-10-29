@@ -19,7 +19,7 @@ CREATE TABLE `users` (
   `fname` varchar(150) DEFAULT NULL,
   `lname` varchar(150) DEFAULT NULL,
   `acl` text,
-  `deleted` tinyint(4) DEFAULT '0'
+  `archived` tinyint(4) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `user_sessions` (

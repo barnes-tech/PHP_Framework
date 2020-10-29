@@ -51,7 +51,7 @@ public static function build_menu_list($menu,$dropdown_class="") {
   foreach($menu as $key => $value) :
     $active = '';
     if($key == '%USERNAME%'){
-      $key = (Users::current_user())?"Hello ".Users::current_user()->first_name : $key;
+      $key = (Users::current_user())?"Hello ".Users::current_user()->fname : $key;
     }
     if(is_array($value)): ?>
     <li class="nav-item dropdown">
